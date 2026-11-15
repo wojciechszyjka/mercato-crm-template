@@ -2,7 +2,9 @@
 
 A ready Open Mercato app made from the CRM starter preset. Use it as the starting point for a CRM: companies, people, deals, pipelines, activities and email channels.
 
-It was created with `create-mercato-app@0.9.0 --preset crm` and is unchanged apart from this README, the licence and the package metadata.
+It was created with `create-mercato-app@0.9.0 --preset crm`. It differs from the stock preset in this README, the licence, the package metadata and one module line.
+
+The template enables the `api_keys` module. The stock 0.9.0 CRM preset cannot initialize without it: the `auth` module needs the `ApiKey` entity, and `yarn initialize` stops with `Metadata for entity ApiKey not found`.
 
 ## Open Mercato version
 
@@ -16,7 +18,7 @@ Modules enabled in `src/modules.ts`:
 | --- | --- |
 | CRM | `customers` |
 | Communication | `messages`, `communication_channels`, `channel_imap`, `channel_gmail`, `notifications` |
-| Platform | `auth`, `directory`, `configs`, `entities`, `query_index`, `audit_logs`, `attachments`, `dictionaries`, `currencies`, `feature_toggles`, `progress`, `integrations` |
+| Platform | `auth`, `api_keys`, `directory`, `configs`, `entities`, `query_index`, `audit_logs`, `attachments`, `dictionaries`, `currencies`, `feature_toggles`, `progress`, `integrations` |
 | Tools | `dashboards`, `search`, `events`, `api_docs`, `ai_assistant` |
 
 The scaffold also ships the source of four example modules in `src/modules/` (`example`, `example_customers_sync`, `ratelimit_probe`, `agent_examples`). The CRM preset does not enable them by default. `agent_examples` and five modules of `@open-mercato/enterprise` (`record_locks`, `system_status_overlays`, `sso`, `security`, `agent_orchestrator`) turn on only with the `OM_ENABLE_ENTERPRISE_MODULES` flags in `.env`.

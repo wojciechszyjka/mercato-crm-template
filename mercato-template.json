@@ -9,6 +9,10 @@
       "from": "@open-mercato/core"
     },
     {
+      "id": "api_keys",
+      "from": "@open-mercato/core"
+    },
+    {
       "id": "directory",
       "from": "@open-mercato/core"
     },
